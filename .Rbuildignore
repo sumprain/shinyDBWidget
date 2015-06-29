@@ -1,0 +1,6 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+devtools.R
+server.R
+ui.R
+README.md

@@ -1,0 +1,32 @@
+
+.widgetDB .divNoEdit {
+  width: 290px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: gray;
+  border-radius: 4px;
+  padding-left: 2px;
+}
+
+.widgetDB .divNoEdit p {
+  font-size: 0.9em;
+  margin: 2px;
+}
+
+.widgetDB .divVal p {
+  color: red;
+  font-size: 0.8em;
+}
+
+.widgetDB > p {
+  margin-bottom: 2px;
+}
+
+.widgetDB {
+  width: 300px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 0.5px;
+  border-color: rgb(200,200,200);
+}

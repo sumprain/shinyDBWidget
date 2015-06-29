@@ -1,0 +1,14 @@
+Package: shinyDBWidget
+Type: Package
+Title: Database Front End Widgets for Shiny Applications
+Version: 0.0.0.9000
+Date: 2015-06-23
+Author: Suman Kumar
+Authors@R: person("Suman", "Kumar", email = "sumprain@yahoo.com", role = c("aut", "cre"))
+Maintainer: Suman Kumar <sumprain@yahoo.com>
+Description: Package contains Database front end widgets for Shiny Application.
+License: MIT
+LazyData: TRUE
+Imports: shiny,
+    lubridate,
+    jsonlite
