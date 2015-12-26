@@ -1,7 +1,7 @@
 #' @export
 widgetSelectDB <- function(inputId, label, choices = NULL, textCol = NULL, valCol = NULL, selectedText = NULL, isRequired = FALSE, readOnly = FALSE, onlyDataEntry = FALSE) {
 
-  # choices, textCol, outputCol, selectedText will be used when the filling of select widget is from client side, else they will be null and will be present in update function
+  # choices (dataframe), textCol (character representing the column from choice from which text is to be displayed on screen), valCol (character representing the column from choice from which the value is to be stored in database), selectedText (one of the values from textCol, which needs to be filled up as default value) will be used when the filling of select widget is from client side, else they will be null and will be present in update function
 
   isRequired <- as.integer(isRequired)
   readOnly <- as.integer(readOnly)
@@ -18,8 +18,13 @@ widgetSelectDB <- function(inputId, label, choices = NULL, textCol = NULL, valCo
 
   if (inherits(choices, "data.frame")) {
     choices <- convertDf(choices, valCol = valCol, textCol = textCol)
-    #browser()
+
     #'[{"val":1,"text":"a"},{"val":2,"text":"b"},{"val":3,"text":"c"}]'
+
+    if (selectedText == "") {
+      selectedText <- choices$text[1]
+    }
+
     htmlNoEdit <- tags$div(class = "divNoEdit", `data-choices` = jsonlite::toJSON(choices), `data-selectedText` = selectedText, `data-isReqd` = isRequired, `data-readOnly` = readOnly, `data-onlyDataEntry` = dataEntry, p(selectedText))
   } else {
     htmlNoEdit <- tags$div(class = "divNoEdit", `data-choices` = '', `data-selectedText` = '', `data-isReqd` = isRequired, `data-readOnly` = readOnly, `data-onlyDataEntry` = dataEntry, p(selectedText))
